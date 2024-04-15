@@ -16,7 +16,7 @@ export const AuthSignup = () => {
         const jwt = response.data.jwt
         console.log("JWT TOKEN",jwt)
         localStorage.setItem("token",jwt)
-        navigate('/blog')
+        navigate('/blogs')
 
     }catch(error){
         console.error("API REQUEST FAILED:",error)

@@ -13,10 +13,9 @@ export const AuthSignin = () => {
   async function signin(){
     try{
         const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`,postInputs)
-        const jwt = response.data.jwt
-        console.log("JWT TOKEN",jwt)
+        const jwt = response.data.token
         localStorage.setItem("token",jwt)
-        navigate('/blog')
+        navigate('/blogs')
 
     }catch(error){
         console.error("API REQUEST FAILED:",error)
